@@ -1,0 +1,33 @@
+HELP.md
+*.class
+**/bin
+**/lib
+**/build
+**/target
+*.jar
+build/
+!**/src/main/**
+!**/src/test/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+
+### VS Code ###
+.vscode/
+
+# For Java
+.gradle
+*.class
+.classpath
+.project
+/**/build/**/*
+
+# Package Files #
+*.jar
+*.war
+*.ear
