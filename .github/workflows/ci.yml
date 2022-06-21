@@ -17,4 +17,25 @@ jobs:
           distribution: 'adopt'
       - name: build with maven
         run: mvn clean
+  sonar-scan:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: SonarQube sonar-scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - name: SonarQube Quality actions/checkout
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        timeout-minutes: 10
+        
+
+
+
+
+
+
 
